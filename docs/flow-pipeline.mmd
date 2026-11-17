@@ -1,0 +1,9 @@
+flowchart LR
+  A["Daily prices, dividends,<br/>shares outstanding, sectors<br/>US listed companies"]:::src --> B["Monthly total returns<br/>1,000 largest by dollar volume"]:::code
+  A --> C["12-month change in share count<br/>known with a 3-month lag"]:::code
+  B --> D["Five portfolios each month<br/>shrinking most ... issuing most"]:::check
+  C --> D
+  D --> E["Returns, risk, CAPM alpha,<br/>sector-neutral, two halves, costs"]:::check
+  classDef src fill:#DCE6F2,stroke:#1F3A5F,color:#222
+  classDef code fill:#E6E1F2,stroke:#5B4B8A,color:#222
+  classDef check fill:#F6DDD8,stroke:#B5473A,color:#222

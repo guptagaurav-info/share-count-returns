@@ -1,0 +1,17 @@
+# Fixed before the tests were run.
+start: "2002-01-31"          # first month with 12 months of lagged share counts for most of the universe
+universe_size: 1000          # largest US operating companies by trailing 12-month dollar volume
+report_lag_months: 3         # a share count dated month m is used from month m+3 (filing lag)
+quintiles: 5
+cost_bps_per_side: 10
+split_year: 2014             # first and second halves: 2002-2013 vs 2014-2026
+hypotheses:
+  H1: "Companies that shrank their share count most (top fifth) beat the heaviest issuers (bottom fifth) after costs."
+  H2: "The gap survives market beta (CAPM alpha) and holds within sectors."
+  H3: "The gap is smaller in 2014-2026 than in 2002-2013."
+  H4: "Most of the gap comes from issuers lagging, not from buyback companies leading."
+sources:
+  stock_prices.parquet: {url: "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_prices.parquet", licence: "ODC-BY", sha256: "4c522ec0dee02cb6554b5c3e4929d512327715c8f89670f9b1898b2403912f98"}
+  shares_outstanding.parquet: {url: "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/shares_outstanding.parquet", licence: "ODC-BY", sha256: "d431d0b921458c083a8ac9dc443ee54e625f409556cd1e340fad9bd5ced41942"}
+  stock_dividend_events.parquet: {url: "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_dividend_events.parquet", licence: "ODC-BY", sha256: "9eb8265ac9d21997a8d9a31f7ee8e5099c42ca2508fe36a07929595b378d4b54"}
+  stock_profile.parquet: {url: "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_profile.parquet", licence: "ODC-BY", sha256: "b57443c42ffcc48e9b7ef5b6c05df09e4acc433d14ec25306a8af9ac4e65de8f"}
